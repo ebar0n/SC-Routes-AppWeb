@@ -1,0 +1,53 @@
+@import service.UserProvider
+@(userProvider: UserProvider, routesCompanyForm: Form[views.formdata.RoutesCompanyFormData], id:Long, streets:List[Street], companies:List[Company])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapBasic.f) }
+@import com.feth.play.module.pa.views.html._
+
+@main(userProvider, Messages("playauthenticate.navigation.routescompany_index"), "routescompany_index") {
+    @helper.form(if (id == 0) {routes.RoutesCompanyController.submit} else {routes.RoutesCompanyController.update(id)}, 'class -> "form-horizontal", 'role -> "form") {
+        @if(routesCompanyForm.hasGlobalErrors) {
+            <p class="alert alert-danger">
+              @routesCompanyForm.globalError.message
+            </p>
+        }
+        @select(routesCompanyForm("company"), 
+            companies.map{ t =>
+                t.name.toString -> (t.name)
+            },
+            '_label -> "Compañia",
+            'class -> "select-chosen span12",
+            'required -> ""
+        )
+        @helper.input(routesCompanyForm("price"), '_label -> "Precio") { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+        @select(routesCompanyForm("initialRoutesCompany"), 
+            streets.map{ t =>
+                t.name.toString -> (t.name)
+            },
+            '_label -> "Ruta inicial",
+            'class -> "select-chosen span12",
+            'required -> ""
+        )
+        @select(routesCompanyForm("mainRoutesCompany"), 
+            streets.map{ t =>
+                t.name.toString -> (t.name)
+            },
+            '_label -> "Rutas intermedias",
+            'class -> "select-chosen span12",
+            'multiple -> "multiple",
+            'required -> ""
+        )
+        @select(routesCompanyForm("finalRoutesCompany"), 
+            streets.map{ t =>
+                t.name.toString -> (t.name)
+            },
+            '_label -> "Ruta final",
+            'class -> "select-chosen span12",
+            'required -> ""
+        )
+        <button type="submit" class="btn btn-default">@if(id == 0) { Crear } else { Editar }</button>
+    }
+}

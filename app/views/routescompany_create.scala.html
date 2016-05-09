@@ -1,0 +1,6 @@
+@import service.UserProvider
+@(userProvider: UserProvider, created: RoutesCompany)
+
+@main(userProvider, "RoutesCompany", "routescompanyForm_index") {
+	@created.company
+}

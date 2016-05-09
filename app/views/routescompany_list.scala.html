@@ -1,0 +1,42 @@
+@import service.UserProvider
+@(userProvider: UserProvider, routescompanyList: List[RoutesCompany])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapBasic.f) }
+@import com.feth.play.module.pa.views.html._
+
+@main(userProvider, Messages("playauthenticate.navigation.routescompany_index"), "routescompany_list") {
+	<ol>
+    @for(routescompany <- routescompanyList){
+        <li>
+        	<ul>
+        		<li>
+        			pk: @routescompany.id 
+        		</li>
+        		<li>
+        			Compañia: @routescompany.company.name
+        		</li>
+        		<li>
+        			Precio: @routescompany.price
+        		</li>
+        		<li>
+        			Ruta inicial: @routescompany.initialRoutesCompany.name
+        		</li>
+        		<li>
+        			Rutas intermedias:
+        			<ul>
+	        			@for(street <- routescompany.mainRoutesCompany) {
+				            <li>
+				            	@street.name
+				            </li>
+				        }
+			        </ul>
+        		</li>
+        		<li>
+        			Ruta final: @routescompany.finalRoutesCompany.name
+        		</li>
+        	</ul>
+        </li>
+    }
+    </ol>
+}

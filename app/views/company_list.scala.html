@@ -1,0 +1,12 @@
+@import service.UserProvider
+@(userProvider: UserProvider, companyList: List[Company])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapBasic.f) }
+@import com.feth.play.module.pa.views.html._
+
+@main(userProvider, Messages("playauthenticate.navigation.company_index"), "company_list") {
+    @for(company <- companyList){
+        pk: @company.id - name: @company.name <br>
+    }
+}

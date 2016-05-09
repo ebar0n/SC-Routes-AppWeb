@@ -1,0 +1,41 @@
+@import service.UserProvider
+@(userProvider: UserProvider, suggestionsList: List[Suggestions])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapBasic.f) }
+@import com.feth.play.module.pa.views.html._
+
+@main(userProvider, Messages("playauthenticate.navigation.suggestions_index"), "suggestions_list") {
+    <ol>
+    @for(suggestions <- suggestionsList){
+        <li>
+        	<ul>
+        		<li>
+        			pk: @suggestions.id 
+        		</li>
+        		<li>
+        			Nombre: @suggestions.firstName
+        		</li>
+        		<li>
+        			Apellido: @suggestions.lastName
+        		</li>
+        		<li>
+        			Email: @suggestions.email
+        		</li>
+        		<li>
+        			Telefono: @suggestions.phone
+        		</li>
+        		<li>
+        			Compañia: @suggestions.company
+        		</li>
+        		<li>
+        			Comentario: @suggestions.comment
+        		</li>
+        		<li>
+        			Fecha de envio: @suggestions.createdAt
+        		</li>
+        	</ul>
+        </li>
+    }
+    </ol>
+}

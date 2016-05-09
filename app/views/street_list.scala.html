@@ -1,0 +1,12 @@
+@import service.UserProvider
+@(userProvider: UserProvider, streetList: List[Street])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapBasic.f) }
+@import com.feth.play.module.pa.views.html._
+
+@main(userProvider, Messages("playauthenticate.navigation.street_index"), "street_list") {
+    @for(street <- streetList){
+        pk: @street.id - name: @street.name <br>
+    }
+}

@@ -1,0 +1,6 @@
+@import service.UserProvider
+@(userProvider: UserProvider, created: Street)
+
+@main(userProvider, "Street", "street_index") {
+	@created.name
+}

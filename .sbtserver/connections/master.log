@@ -1,0 +1,16 @@
+New log file opened at Mon May 09 18:22:39 VET 2016 by 20523@pc
+Taking next connection to: 42734
+New client attempting to connect on port: 46742-42734
+  Address = /127.0.1.1:42734
+This client on port 46742 has uuid e94fb94d-a908-49a5-9e0a-609caf2aadaa configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-e94fb94d-a908-49a5-9e0a-609caf2aadaa
+Taking next connection to: 42734
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 42734
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 42734
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 42734
