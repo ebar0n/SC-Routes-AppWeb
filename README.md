@@ -14,4 +14,8 @@
 
 0. Uso
 
-		SC-Routes-AppWeb $ ./bin/activator run
+	0. Ejecutar
+
+			SC-Routes-AppWeb $ ./bin/activator run
+
+	0. Visitar [127.0.0.1:9000](https://127.0.0.1:9000/)
