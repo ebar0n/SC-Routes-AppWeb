@@ -6,37 +6,39 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.routescompany_index"), "routescompany_list") {
-	<ol>
-    @for(routescompany <- routescompanyList){
-        <li>
-        	<ul>
-        		<li>
-        			pk: @routescompany.id 
-        		</li>
-        		<li>
-        			Compañia: @routescompany.company.name
-        		</li>
-        		<li>
-        			Precio: @routescompany.price
-        		</li>
-        		<li>
-        			Ruta inicial: @routescompany.initialRoutesCompany.name
-        		</li>
-        		<li>
-        			Rutas intermedias:
-        			<ul>
-	        			@for(street <- routescompany.mainRoutesCompany) {
-				            <li>
-				            	@street.name
-				            </li>
-				        }
-			        </ul>
-        		</li>
-        		<li>
-        			Ruta final: @routescompany.finalRoutesCompany.name
-        		</li>
-        	</ul>
-        </li>
-    }
-    </ol>
+    <div class="page-header">
+      <h1>Rutas <small>Lista</small></h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Compañia</th>
+                <th>Precio pasaje</th>
+                <th>Origen</th>
+                <th>Rutas intermedias</th>
+                <th>Destino</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(company <- companyList){
+                <tr>
+                    <td>@routescompany.id</td>
+                    <td>@routescompany.company.name</td>
+                    <td>@routescompany.price</td>
+                    <td>@routescompany.initialRoutesCompany.name</td>
+                    <td>
+                        <ul>
+                            @for(street <- routescompany.mainRoutesCompany) {
+                                <li>
+                                    @street.name
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                    <td>@routescompany.finalRoutesCompany.name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
