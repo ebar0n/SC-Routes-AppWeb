@@ -6,7 +6,20 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.company_index"), "company_list") {
-    @for(company <- companyList){
-        pk: @company.id - name: @company.name <br>
-    }
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for(company <- companyList){
+				<tr>
+					<td>@company.id</td>
+					<td>@company.name</td>
+				</tr>
+			}
+		</tbody>
+    </table>
 }
