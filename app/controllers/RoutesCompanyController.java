@@ -7,6 +7,7 @@ import models.User;
 import models.RoutesCompany;
 import models.Street;
 import models.Company;
+import play.libs.Json;
 import play.Routes;
 import play.data.Form;
 import play.mvc.Controller;
@@ -100,7 +101,7 @@ public class RoutesCompanyController extends Controller {
 		return redirect(routes.RoutesCompanyController.list());
 	}
 
-	public Result search(String search){
+	public List<RoutesCompany> get_routesCompanys(String search){
 		List<RoutesCompany> routesCompanys;
 		if (search == null || search.length() == 0) {
 			routesCompanys = new ArrayList<RoutesCompany>();
@@ -129,7 +130,17 @@ public class RoutesCompanyController extends Controller {
 				}
 	        }
 		}		
+		return routesCompanys;
+	}
+
+	public Result search(String search){
+		List<RoutesCompany> routesCompanys = this.get_routesCompanys(search);
 		return ok(routescompany_search.render(this.userProvider, routesCompanys, search));
+	}
+
+	public Result searchApi(String search){
+		List<RoutesCompany> routesCompanys = this.get_routesCompanys(search);
+		return ok(Json.toJson(routesCompanys));
 	}
 
 }
