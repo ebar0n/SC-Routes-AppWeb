@@ -6,7 +6,23 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.street_index"), "street_list") {
-    @for(street <- streetList){
-        pk: @street.id - name: @street.name <br>
-    }
+	<div class="page-header">
+	  <h1>Calles <small>Lista</small></h1>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for(street <- streetList){
+				<tr>
+					<td>@street.id</td>
+					<td>@street.name</td>
+				</tr>
+			}
+		</tbody>
+    </table>
 }

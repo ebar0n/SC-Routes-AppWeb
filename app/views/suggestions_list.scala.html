@@ -6,36 +6,35 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.suggestions_index"), "suggestions_list") {
-    <ol>
-    @for(suggestions <- suggestionsList){
-        <li>
-        	<ul>
-        		<li>
-        			pk: @suggestions.id 
-        		</li>
-        		<li>
-        			Nombre: @suggestions.firstName
-        		</li>
-        		<li>
-        			Apellido: @suggestions.lastName
-        		</li>
-        		<li>
-        			Email: @suggestions.email
-        		</li>
-        		<li>
-        			Telefono: @suggestions.phone
-        		</li>
-        		<li>
-        			Compañia: @suggestions.company
-        		</li>
-        		<li>
-        			Comentario: @suggestions.comment
-        		</li>
-        		<li>
-        			Fecha de envio: @suggestions.createdAt
-        		</li>
-        	</ul>
-        </li>
-    }
-    </ol>
+    <div class="page-header">
+      <h1>Sugerencias <small>Lista</small></h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Compañia</th>
+                <th>Comentario</th>
+                <th>Fecha de envio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(suggestions <- suggestionsList){
+                <tr>
+                    <td>@suggestions.id</td>
+                    <td>@suggestions.firstName</td>
+                    <td>@suggestions.lastName</td>
+                    <td>@suggestions.email</td>
+                    <td>@suggestions.phone</td>
+                    <td>@suggestions.company</td>
+                    <td>@suggestions.comment</td>
+                    <td>@suggestions.createdAt</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
