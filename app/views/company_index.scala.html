@@ -6,6 +6,9 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.company_index"), "company_index") {
+    <div class="page-header">
+      <h1>Compañias <small>Crear</small></h1>
+    </div>
     @helper.form(if (id == 0) {routes.CompanyController.submit} else {routes.CompanyController.update(id)}, 'class -> "form-horizontal", 'role -> "form") {
         @if(companyForm.hasGlobalErrors) {
             <p class="alert alert-danger">

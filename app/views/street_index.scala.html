@@ -6,6 +6,9 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(userProvider, Messages("playauthenticate.navigation.street_index"), "street_index") {
+	<div class="page-header">
+	  <h1>Calles <small>Crear</small></h1>
+	</div>
 	@helper.form(if (id == 0) {routes.StreetController.submit} else {routes.StreetController.update(id)}, 'class -> "form-horizontal", 'role -> "form") {
 		@if(streetForm.hasGlobalErrors) {
 			<p class="alert alert-danger">
