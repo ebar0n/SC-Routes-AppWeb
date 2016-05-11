@@ -30,3 +30,8 @@ form .error .help-inline {
 h1 {
     margin-bottom: 20px !important;
 }
+
+.form-horizontal .form-group {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
