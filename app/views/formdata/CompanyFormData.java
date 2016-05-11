@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CompanyFormData {
 
-  public String name = "";
+  public String name;
 
   /** Required for form instantiation. */
   public CompanyFormData() {
