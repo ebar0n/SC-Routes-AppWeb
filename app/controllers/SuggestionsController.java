@@ -64,7 +64,7 @@ public class SuggestionsController extends Controller {
 		} else {
 			Suggestions suggestions = Suggestions.makeInstance(filledForm.get());
       		flash("success", "Suggestions instance created: " + suggestions);
-			return redirect(routes.SuggestionsController.list());
+			return redirect(routes.Application.index());
 		}
 	}
 
