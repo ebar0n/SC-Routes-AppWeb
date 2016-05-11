@@ -27,11 +27,11 @@ public class CompanyFormData {
     List<ValidationError> errors = new ArrayList<>();
 
     if (name == null || name.length() == 0) {
-      errors.add(new ValidationError("name", "No name was given."));
+      errors.add(new ValidationError("name", "Este campo es requedido."));
     }
     
     if(errors.size() > 0)
-      return errors;
+      return null;
 
     return null;
   }
