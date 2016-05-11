@@ -7,6 +7,7 @@ import models.User;
 import models.Company;
 import play.Routes;
 import play.data.Form;
+import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
@@ -34,26 +35,29 @@ public class CompanyController extends Controller {
 
 	private final UserProvider userProvider;
 
+	private final Form<CompanyFormData> formData;
+
 	public static String formatTimestamp(final long t) {
 		return new SimpleDateFormat("yyyy-dd-MM HH:mm:ss").format(new Date(t));
 	}
 
 	@Inject
 	public CompanyController(final PlayAuthenticate auth, final MyUsernamePasswordAuthProvider provider,
-					   final UserProvider userProvider) {
+					   final UserProvider userProvider, final FormFactory formFactory) {
 		this.auth = auth;
 		this.provider = provider;
 		this.userProvider = userProvider;
+		this.formData = formFactory.form(CompanyFormData.class);
 	}
 
 	public Result index(long id) {
 		CompanyFormData companyData = (id == 0) ? new CompanyFormData() : models.Company.makeCompanyFormData(id);
-    	Form<CompanyFormData> formData = Form.form(CompanyFormData.class).fill(companyData);
+    	Form<CompanyFormData> formData = this.formData.fill(companyData);
 		return ok(company_index.render(this.userProvider, formData, id));
 	}
 
 	public Result submit() {
-		Form<CompanyFormData> filledForm = Form.form(CompanyFormData.class).bindFromRequest();
+		Form<CompanyFormData> filledForm = this.formData.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			flash("error", "Please correct errors above.");
 			return badRequest(company_index.render(this.userProvider, filledForm, 0L));
@@ -65,7 +69,7 @@ public class CompanyController extends Controller {
 	}
 
 	public Result update(long id) {
-		Form<CompanyFormData> filledForm = Form.form(CompanyFormData.class).bindFromRequest();
+		Form<CompanyFormData> filledForm = this.formData.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			flash("error", "Please correct errors above.");
 			return badRequest(company_index.render(this.userProvider, filledForm, id));
