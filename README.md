@@ -12,17 +12,17 @@
 
 ## Desarrollado con JSP [PlayFramework](https://playframework.com/) usando [Ebean-ORM](http://ebean-orm.github.io/docs/).
 
-0. Uso: probado en **Ubuntu 16.04**
+Probado en **Ubuntu 14.04.4 x64**
 
-	0. Pre-requisitos [Java8](https://www.java.com/es/)
- 
-			$ add-apt-repository ppa:webupd8team/java
-			$ apt-get update
-			$ apt-get install oracle-java8-installer
-			$ java -version
+0. Pre-requisitos [Java8](https://www.java.com/es/)
 
-	0. Ejecutar `Esto llevara su tiempo :)`
+		$ add-apt-repository ppa:webupd8team/java
+		$ apt-get update
+		$ apt-get install oracle-java8-installer
+		$ java -version
 
-			$ ./bin/activator run
+0. Ejecutar `Esto llevara su tiempo :)`
 
-	0. Visitar [127.0.0.1:9000](https://127.0.0.1:9000/)
+		$ ./bin/activator run
+
+0. Visitar [127.0.0.1:9000](https://127.0.0.1:9000/)
