@@ -23,7 +23,7 @@ Probado en **Ubuntu 14.04.4 x64**
 
 0. Dev
 	
-		$ ./bin/activator run
+		$ ./bin/activator clean run
 
 0. Producción
 
