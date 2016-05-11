@@ -12,7 +12,7 @@
 
 ## Desarrollado con JSP [PlayFramework](https://playframework.com/) usando [Ebean-ORM](http://ebean-orm.github.io/docs/).
 
-0. Uso: probado en **Ubuntu 16.04**
+0. Uso: probado en **Ubuntu 14.04.4 x64**
 
 	0. Pre-requisitos [Java8](https://www.java.com/es/)
  
