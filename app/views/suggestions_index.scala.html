@@ -15,23 +15,18 @@
 			  @suggestionsForm.globalError.message
 			</p>
 		}
-		@inputText(suggestionsForm("firstName"))
-
-		@inputText(suggestionsForm("lastName"))
-
-		@inputText(suggestionsForm("email"))
-
-		@inputText(suggestionsForm("phone"))
-		
+		@helper.inputText(suggestionsForm("firstName"), '_label -> "Nombre")
+		@helper.inputText(suggestionsForm("lastName"), '_label -> "Apellido")
+		@helper.inputText(suggestionsForm("email"), '_label -> "Email")
+		@helper.inputText(suggestionsForm("phone"), '_label -> "Teléfono")
 		@select(suggestionsForm("company"), 
-            companies.map{ t =>
-                t.name.toString -> (t.name)
-            },
-            '_label -> "Compañia",
-            'class -> "select-chosen-deselect span12"
-        )
-
-		@inputText(suggestionsForm("comment"))
+			companies.map{ t =>
+				t.name.toString -> (t.name)
+			},
+			'_label -> "Compañia",
+			'class -> "select-chosen-deselect span12"
+		)
+		@helper.inputText(suggestionsForm("comment"), '_label -> "Comentario")
 		<button type="submit" class="btn btn-default">Enviar</button>
 	}
 }
