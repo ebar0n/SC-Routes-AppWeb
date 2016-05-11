@@ -15,9 +15,7 @@
               @companyForm.globalError.message
             </p>
         }
-        @inputText(
-            companyForm("name")
-        )
+        @helper.inputText(companyForm("name"), '_label -> "Nombre")
         <button type="submit" class="btn btn-default">@if(id == 0) { Crear } else { Editar }</button>
     }
 }
