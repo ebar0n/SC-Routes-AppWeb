@@ -37,4 +37,4 @@ lazy val root = project.in(file("."))
   //.dependsOn(playAuthenticate)
   //.aggregate(playAuthenticate)
 
-fork in run := true
+fork in run := false
