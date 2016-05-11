@@ -122,6 +122,11 @@ playauthenticate.navigation.createroutes=Crear rutas
 playauthenticate.navigation.support=Enviar sugerencias
 playauthenticate.navigation.view_support=Ver sugerencias
 playauthenticate.navigation.signup=Registrarse
+playauthenticate.navigation.company=Compañias
+playauthenticate.navigation.street=Calles
+playauthenticate.navigation.suggestions=Enviar sugerencias
+playauthenticate.navigation.routescompany=Rutas
+playauthenticate.navigation.routescompany_search=Buscar Rutas
 
 # play-authenticate: Handler
 playauthenticate.handler.loginfirst=Para ver ''{0}'', debe registrarse primero.
