@@ -56,9 +56,18 @@
                                     </ul>
                                 </li>
                             </ul>
+                            <li class="@("active".when(nav == "suggestions_list"))"><a href="@routes.SuggestionsController.list()">@Messages("playauthenticate.navigation.suggestions_list")</a></li>
                         }
 
                         @subjectNotPresent() {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rutas <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="@("active".when(nav == "routescompany_search"))"><a href="@routes.RoutesCompanyController.search()">@Messages("playauthenticate.navigation.routescompany_search")</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                             <li class="@("active".when(nav == "suggestions"))"><a href="@routes.SuggestionsController.index()">@Messages("playauthenticate.navigation.suggestions")</a></li>
                             <li class="@("active".when(nav == "signup"))"><a href="@routes.Application.signup()">@Messages("playauthenticate.navigation.signup")</a></li>
                         }

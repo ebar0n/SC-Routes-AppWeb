@@ -125,6 +125,7 @@ playauthenticate.navigation.signup=Registrarse
 playauthenticate.navigation.company=Compañias
 playauthenticate.navigation.street=Calles
 playauthenticate.navigation.suggestions=Enviar sugerencias
+playauthenticate.navigation.suggestions_list=Sugerencias
 playauthenticate.navigation.routescompany=Rutas
 playauthenticate.navigation.routescompany_search=Buscar Rutas
 
