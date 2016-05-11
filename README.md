@@ -21,8 +21,13 @@ Probado en **Ubuntu 14.04.4 x64**
 		$ apt-get install oracle-java8-installer
 		$ java -version
 
-0. Ejecutar `Esto llevara su tiempo :)`
-
+0. Dev
+	
 		$ ./bin/activator run
+
+0. Producción
+
+		$ ./bin/activator clean stage
+		$ ./target/universal/stage/bin/sc-routes &
 
 0. Visitar [127.0.0.1:9000](https://127.0.0.1:9000/)
